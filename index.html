@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+<!--    <meta http-equiv="x-ua-compatible" content="ie=edge">-->
+    <title>JavaScript - jaśniejsza strona mocy</title>
+    <meta name="description" content="demo">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--  <link rel="apple-touch-icon" href="apple-touch-icon.png">-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="css/main.min.css">
+</head>
+    <body>
+        <header class="header">
+            <a href="#main" class="visuallyhidden focus">Przejdź do treści</a>
+            <h1 class="header__headline span">
+                <span class="span__animation">JavaScript</span>
+                <span class="span__animation_no-bold">jaśniejsza strona mocy</span>
+            </h1>
+            <nav class="header__nav nav">
+                <h2 class="visuallyhidden">Nawigacja</h2>
+                <button type="button" class="nav__toggle" aria-expanded="false" aria-controls="menu" aria-label="Otwórz/zamknij menu">
+                    <i class="icon-menu" aria-hidden="true"></i>
+                </button>
+                <ul id="menu" class="nav__menu menu">
+                    <li class="menu__item">
+                        <a href="#admission" class="menu__link">Słowem wstępu</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#events" class="menu__link">Zdarzenia</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#create-delete" class="menu__link">Tworzenie i usuwanie elementów</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#manipulation" class="menu__link">Manipulacja elementami</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#animations" class="menu__link">Animacje</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#ending" class="menu__link">Na zakończenie...</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main id="main" class="main" tabindex="-1">
+            <article class="article">
+                <h2 class="article__title" id="admission">Słowem wstępu</h2>
+                <p class="article__paragraph">
+                    JavaScript jest potężnym językiem w którym możesz tworzyć nie tylko aplikacje, które będą działać po stronie klienta ale również po stronie serwera. Przedstawione tutaj przykłady nie zawierają pewnie nawet 1/10000 tego co oferuje nam JS.
+                </p>
+                <p class="article__paragraph">
+                    Jest to język lekki w nauce, ale ucząc się go potrzeba dużo cierpliwości i samozapracia.
+                </p>
+                <p class="article__paragraph">
+                    Ten maluczki projekt nie miał na celu pokazywania miliona przkładów jak można wykorzstać JavaScript, wręcz przeciwnie. Przedstawione króciutkie przykłady mają pokazać jak wielki potencjał drzemie w tym języku, który sam powinieneś odkryć.
+                </p>
+            </article>
+            <article class="article">
+                <h2 class="article__title" id="events">Zdarzenia</h2>
+                <p class="article__paragraph">
+                    Wchodząc na strone internetową, użytkownik wykonuje wiele czynności takich jak: kliknięcie, przesunięcie myszą, zaznaczenie elementu, wcisnięcie klawisza i wiele innych. JavaScript pozwala Ci w pełni kontrolować te zdarzenia.
+                </p>
+                <p class="article__paragraph">
+                    Istnieją rwónież zdarzenia, które nie są spowodowane przez interakcje np. DOMContentLoaded.
+                </p>
+                <div class="article__content code">
+                    <div class="code__block">
+                        <code class="code__js">
+                            <span class="line">
+                                <span class="const">const</span> <span class="name_var">block</span> = <span class="element">document</span>.<span class="method">querySelector</span>(<span class="string">".block"</span>);
+                            </span>            
+                            <span class="line">
+                                block.<span class="method">addEventListener</span>(<span class="string">"mousemove"</span>, <span class="function">function</span>(e){
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;<span class="const">const</span> <span class="name_var">el</span> = <span class="element">document</span>.<span class="method">querySelector</span>(<span class="string">".element"</span>),
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="name_var">x</span> = e.<span class="method">pageX</span> - <span class="this">this</span>.<span class="method">offsetLeft</span>,
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="name_var">y</span> = e.<span class="method">pageY</span> - <span class="this">this</span>.<span class="method">offsetTop</span>;
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;el.<span class="method">style</span>.<span class="method">left</span> = x + <span class="string">"px"</span>;
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;el.<span class="method">style</span>.<span class="method">top</span> = y + <span class="string">"px"</span>;
+                            </span>
+                            <span class="line">
+                                })
+                            </span>
+                        </code>
+                    </div>
+                    <div class="code__result code__result_1 block">                        
+                        <div class="test1"></div>
+<!--                        <button class="block__btn block__btn_one">Start</button>-->
+                    </div>
+                </div>
+            </article>
+            <article class="article">
+                <h2 class="article__title" id="create-delete">Tworzenie i usuwanie elementów</h2>
+                <p class="article__paragraph">
+                    JavaScript umożliwia nam tworzenie nowych elementów na stronie jak i ich usuwanie. Nowo utworzonymi elementami można dowolnie manipulować, przypisywać im id, klasy, style, atrybuty, możemy również decydować jaką będą posiadały zawartość.
+                </p><p class="article__paragraph">
+                    Nowe elementy mogą być umieszczane przed, za elementami i wewnątrz innych elementów.
+                </p>
+                <div class="article__content code">
+                    <div class="code__block">
+                        <code class="code__js">
+                            <span class="line">
+                                <span class="function">function</span> <span class="name_var">createElement</span>(){
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;<span class="const">const</span> <span class="name_var">newEl</span> = <span class="element">document</span>.<span class="method">createElement</span>(<span class="string">"div"</span>),
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="name_var">parent</span> = document.<span class="method">querySelector</span>(<span class="string">".el"</span>);
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;newEl.<span class="method">innerHTML</span> = <span class="string">"Dodano nowy element"</span>;
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;par.<span class="method">appendChild</span>(newEl);
+                            </span>
+                            <span class="line">
+                                }
+                            </span>
+                        </code>
+                    </div>
+                    <div class="code__result code__result_2 block">
+                        <button class="block__btn block__btn_two">Start</button>
+                    </div>
+                </div>
+                <div class="article__content code">
+                    <div class="code__block">
+                        <code class="code__js">
+                            <span class="line">
+                                <span class="function">function</span> <span class="name_var">removeChild</span>(){
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;<span class="const">const</span> <span class="name_var">parent</span> = <span class="element">document</span>.<span class="method">querySelector</span>(<span class="string">".el1"</span>),
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="name_var">child</span> = document.<span class="method">querySelector</span>(<span class="string">".el2"</span>);
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;<span class="if">if</span>(child !== <span class="null">null</span>){
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp; &nbsp;&nbsp;parent.<span class="method">removeChild</span>(child);
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;}
+                            </span>
+                            <span class="line">
+                                }
+                            </span>
+                        </code>
+                    </div>
+                    <div class="code__result code__result_3 block">
+                        <div class="test2">
+                            Rodzic
+                            <div class="test2__child">Dziecko</div>
+                        </div>
+                        <button class="block__btn block__btn_three">Start</button>
+                    </div>
+                </div>
+            </article>
+            <article class="article">
+                <h2 class="article__title" id="manipulation">Manipulacja elementami</h2>
+                <p class="article__paragraph">
+                    Cóż, JavaScript jest tak świetnym językiem, że pozwala nam nawet z prostokąta zrobić kwarat a z kwadratu koło.
+                    Elementom można przypisywać/dopisywać nowe atrybuty, klasy, style, które mogą zmienić jego wygląd, zawartość czy też sprawić, że element stanie się kompletnie niewidoczny.
+                <div class="article__content code">
+                    <div class="code__block">
+                        <code class="code__js">
+                            <span class="line">
+                                <span class="function">function</span> <span class="name_var">change</span>(){
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;<span class="const">const</span> <span class="name_var">el</span> = <span class="element">document</span>.<span class="method">querySelector</span>(<span class="string">".block"</span>);
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;<span class="if">if</span>(!el.<span class="method">classList</span>.<span class="method">contains</span>(<span class="string">"rectangle"</span>) &amp;&amp;
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!el.<span class="method">classList</span>.<span class="method">contains</span>(<span class="string">"circle"</span>)){
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;&nbsp;&nbsp;el.<span class="method">classList</span>.<span class="method">add</span>(<span class="string">"rectangle"</span>);
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;&nbsp;&nbsp;el.<span class="method">innerHTML</span> = <span class="string">"Ale jak to..."</span>
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;} <span class="else">else</span> {
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;&nbsp;&nbsp;el.<span class="method">classList</span>.<span class="method">remove</span>(<span class="string">"rectangle"</span>);
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;&nbsp;&nbsp;el.<span class="method">classList</span>.<span class="method">add</span>(<span class="string">"circle"</span>);
+                            </span>
+                            <span class="line">
+                                }
+                            </span>
+                        </code>
+                    </div>
+                    <div class="code__result code__result_4 block">
+                        <div class="test3">
+                            Jestem białym kwadratem!
+                        </div>
+                        <button class="block__btn block__btn_four">Start</button>
+                    </div>
+                </div>
+            </article>
+            <article class="article">
+                <h2 class="article__title" id="animations">Animacje</h2>
+                <p class="article__paragraph">
+                    Dużą część animacji można wykonać już w CSS, ale JavaScript pod tym wzlędem również ma duże pole do popisu.
+                <div class="article__content code">
+                    <div class="code__block">
+                        <code class="code__js">
+                            <span class="line">
+                                <span class="function">function</span> <span class="name_var">fadeOut</span>(){
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;<span class="const">const</span> <span class="name_var">el</span> = <span class="element">document</span>.<span class="method">querySelector</span>(<span class="string">".block"</span>);
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;el.<span class="method">style</span>.<span class="method">opacity</span> = +(el.<span class="method">style</span>.<span class="method">opacity</span> ||
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;&nbsp;&nbsp;window.<span class="method">getComputedStyle</span>(el)[<span class="string">"opacity"</span>]);
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;(<span class="function">function</span> <span class="name_var">task</span>(){
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;&nbsp;&nbsp;el.<span class="method">style</span>.<span class="method">opacity</span> = +el.<span class="method">style</span>.<span class="method">opacity</span>-<span class="num">0.01</span>;
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="if">if</span>(+el.<span class="method">style</span>.<span class="method">opacity</span>><span class="num">0</span>){
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(window.<span class="method">requestAnimationFrame</span> &amp;&amp;
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;requestAnimationFrame(task)) ||
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setTimeout(task, <span class="num">16</span>);
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;&nbsp;&nbsp;}
+                            </span>
+                            <span class="line">
+                                &nbsp;&nbsp;}());
+                            </span>
+                            <span class="line">
+                                }
+                            </span>
+                        </code>
+                    </div>
+                    <div class="code__result code__result_5 block">
+                        <div class="test4"></div>
+                        <button class="block__btn block__btn_five">Start</button>
+                    </div>
+                </div>
+            </article>
+            <article class="article">
+                <h2 class="article__title" id="ending">Na zakończenie...</h2>
+                <p class="article__paragraph">
+                    Kilka przydanych linków na początek <span aria-hidden="true">;)</span>
+                </p>
+                <ul class="article__links links">
+                    <li>
+                        <a href="http://tutorials.comandeer.pl/" class="links__link">http://tutorials.comandeer.pl/</a>
+                    </li>
+                    <li>
+                        <a href="http://www.kursjs.pl/" class="links__link">http://www.kursjs.pl/</a>
+                    </li>
+                    <li>
+                        <a href="http://javascript.pl/" class="links__link">http://javascript.pl/</a>
+                    </li>
+                    <li>
+                        <a href="https://www.javascript.com/" class="links__link">https://www.javascript.com/</a>
+                    </li>
+                    <li>
+                        <a href="http://forum.pasja-informatyki.pl/" class="links__link">http://forum.pasja-informatyki.pl/</a>
+                    </li>
+                </ul>
+            </article>
+        </main>
+        <footer class="footer">
+            <span class="footer__copy">
+                Copyright &copy; 2016 Mr. Nobody
+            </span>
+        </footer>
+        <script src="js/main.js"></script>
+    </body>
+</html>

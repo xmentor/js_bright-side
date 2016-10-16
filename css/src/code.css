@@ -1,0 +1,27 @@
+.code__js{
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+.var,
+.const,
+.let,
+.function,
+.this,
+.if,
+.else,
+.num{
+    color: #00c5ff;
+}
+.name_var,
+.method{
+    color: #AC4EE2;
+}
+.string,
+.null{
+    color: darkorange
+}
+.line{
+    position: relative;
+    line-height: 1.4;
+    display: block;
+}

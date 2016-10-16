@@ -1,0 +1,609 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+q:before,
+blockquote:after,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: 'fontello';
+  src: url('../font/fontello.eot?53415827');
+  src: url('../font/fontello.eot?53415827#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff2?53415827') format('woff2'),
+       url('../font/fontello.woff?53415827') format('woff'),
+       url('../font/fontello.ttf?53415827') format('truetype'),
+       url('../font/fontello.svg?53415827#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?53415827#fontello') format('svg');
+  }
+}
+*/
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-menu:before { content: '\f0c9'; } /* '' */
+.code__js{
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+.var,
+.const,
+.let,
+.function,
+.this,
+.if,
+.else,
+.num{
+    color: #00c5ff;
+}
+.name_var,
+.method{
+    color: #AC4EE2;
+}
+.string,
+.null{
+    color: darkorange
+}
+.line{
+    position: relative;
+    line-height: 1.4;
+    display: block;
+}
+*,
+*:before,
+*:after{
+    box-sizing: border-box;
+}
+body{
+    font: 1em Lato, sans-serif;
+    background-color: #fefefe;
+    margin: 0;
+}
+.visuallyhidden{ 
+    border: 0; 
+    clip: rect(0 0 0 0); 
+    height: 1px; 
+    margin: -1px; 
+    overflow: hidden; 
+    padding: 0; 
+    position: absolute; 
+    width: 1px; 
+}
+.visuallyhidden.focus:focus{
+    clip: auto; 
+    height: auto; 
+    margin: 0; 
+    overflow: visible; 
+    position: absolute; 
+    left: 15px;
+    top: 15px;
+    width: auto;
+}
+.header{
+    min-height: 500px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #F8DC3D;
+    color: #222;
+    position: relative;
+    
+}
+/*
+.header:after{
+    content: "JS";
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    font-size: 7em;
+    line-height: 1;
+    font-weight: 700;
+}
+*/
+.header__headline{
+    font-size: 4em;
+    text-align: center;
+    text-transform: capitalize;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    overflow: hidden;
+}
+@-webkit-keyframes show{
+    0%{
+        -webkit-transform: translateY(-100%);
+                transform: translateY(-100%);
+    }
+    100%{
+        -webkit-transform: translateY(0%);
+                transform: translateY(0%);
+    }
+}
+@keyframes show{
+    0%{
+        -webkit-transform: translateY(-100%);
+                transform: translateY(-100%);
+    }
+    100%{
+        -webkit-transform: translateY(0%);
+                transform: translateY(0%);
+    }
+}
+@-webkit-keyframes show2{
+    0%{
+        -webkit-transform: translateY(100%);
+                transform: translateY(100%);
+    }
+    100%{
+        -webkit-transform: translateY(0%);
+                transform: translateY(0%);
+    }
+}
+@keyframes show2{
+    0%{
+        -webkit-transform: translateY(100%);
+                transform: translateY(100%);
+    }
+    100%{
+        -webkit-transform: translateY(0%);
+                transform: translateY(0%);
+    }
+}
+.span__animation{
+    font-weight: 700;
+    -webkit-animation: show 1s ease-in-out;
+            animation: show 1s ease-in-out;
+}
+.span__animation_no-bold{
+    font-weight: 400;
+    -webkit-animation: show2 1s ease-in-out;
+            animation: show2 1s ease-in-out;
+}
+.header__nav{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 999;
+}
+.nav__toggle{
+    padding: 0;
+    border: 0;
+    background: none;
+    color: #222;
+    font-size: 1.6em;
+    cursor: pointer;
+    -webkit-transition: color .2s ease-in-out;
+            transition: color .2s ease-in-out;
+}
+.nav__toggle.nav__toggle_open{
+   color: #eee;
+}
+.nav__toggle.nav__toggle_open:hover,
+.nav__toggle.nav__toggle_open:focus{
+    color: #222;
+}
+.nav__toggle:hover,
+.nav__toggle:focus{
+    color: #eee;
+}
+.nav__menu{
+    background-color: rgba(0,0,0,.6);
+    position: absolute;
+    width: 0px;
+    right:-15px;
+    top: -15px;
+    min-height: 500px;
+    z-index: -1;
+    visibility: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+    overflow: hidden;
+}
+.nav__menu.nav__menu_open{
+    visibility: visible;
+    width: 300px;
+    -webkit-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+}
+.menu__item{
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+.menu__link{
+    padding-left: 20px;
+    text-decoration: none;
+    color: #eee;
+    display: block;
+    -webkit-transition: color .2s ease-in-out;
+            transition: color .2s ease-in-out;
+}
+.menu__link:hover,
+.menu__link:focus{
+    color: #222;
+}
+.main{
+    outline: 0;
+}
+.article{
+    width: 1024px;
+    margin: 0 auto;
+    text-align: center;
+}
+@media (max-width: 980px){
+    .article{
+        width: 100%;
+    }
+    .article__paragraph{
+        padding: 0 15px;
+    }
+}
+.article:last-child{
+    margin-bottom: 35px;
+}
+.article__title{
+    font-size: 2.5em;
+    text-align: center;
+    color: #222;
+    margin: 45px 0;
+    position: relative;
+}
+.article__title:after{
+    position: absolute;
+    content: "";
+    width: 85px;
+    height: 2px;
+    left: 0; right: 0;
+    margin: 0 auto;
+    bottom: -10px;
+    background-color: #F8DC3D;
+    border-radius: 1px;
+}
+.article__paragraph{
+    margin: 25px 0 15px 0;
+    text-align: center;
+}
+.article__paragraph + .article__paragraph{
+    margin-top: 0;
+}
+.article__content{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+@media (max-width: 980px){
+    .article__content{
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+    }
+}
+.article__content + .article__content{
+    margin-top: 15px;
+}
+.article__links{
+    text-align: left;
+    list-style: circle;
+    display: inline-block;
+    margin: 0 auto;
+}
+.links__link{
+    color: #333;
+}
+.links__link:hover,
+.links__link:focus{
+    color: #000;
+}
+.code__block,
+.code__result{
+    color: #fff;
+    background-color: #333;
+    width: 500px;
+    height: 250px;
+    padding: 15px 0 15px 15px;
+    box-sizing: border-box;
+    border: 2px solid #777;
+    border-radius: 5px;
+    position: relative;
+    overflow: auto;
+    text-align: left;
+}
+
+.block__btn{
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    padding: 5px 0;
+    margin: 0;
+    border: 2px solid #777;
+    border-radius: 5px;
+    background-color: white;
+    width: 80px;
+    font-size: 1.1em;
+    color: #333;
+    -webkit-transition: color .2s ease-in-out, background-color .2s ease-in-out;
+            transition: color .2s ease-in-out, background-color .2s ease-in-out;
+}
+.block__btn:hover,
+.block__btn:focus{
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+.test1{
+    width: 50px;
+    height: 50px;
+    background-color: #F08080;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+}
+.test2{
+    width: 130px;
+    height: 130px;
+    color: #222;
+    background-color: #7FFFD4;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.test2__child{
+    width: 65px;
+    height: 65px;
+    background-color: #F0F8FF;
+}
+.test3{
+    width: 120px;
+    height: 120px;
+    color: #222;
+    background-color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    -webkit-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+}
+.test3.rectangle{
+    width: 220px;
+    background-color: #8A2BE2;
+    -webkit-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+}
+.test3.circle{
+    border-radius: 50%;
+    background-color: #9ACD32;
+    -webkit-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+}
+.test4{
+    width: 150px;
+    height: 150px;
+    background-color: #DC143C;
+    opacity: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}
+.footer{
+    background-color: #F8DC3D;
+    text-align: center;
+    color: #222;
+    padding: 25px 0;
+}
